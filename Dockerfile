@@ -28,6 +28,6 @@ RUN cd /var/lib && \
   rm -f jmeter-${JMETER_VERSION}.tgz && \
   ln -s /var/lib/apache-jmeter-${JMETER_VERSION} /var/lib/apache-jmeter && \
   cd ./apache-jmeter-${JMETER_VERSION} && \
-  curl https://jmeter-plugins.org/files/packages/jpgc-casutg-2.1.zip -o ctg-plugin.zip && \
+  curl https://jmeter-plugins.org/files/packages/jpgc-casutg-2.5.zip -o ctg-plugin.zip && \
   unzip ctg-plugin.zip && \
   rm -f ctg-plugin.zip
