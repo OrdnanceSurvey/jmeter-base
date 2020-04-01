@@ -1,9 +1,4 @@
 # Covers JetBrains IDE IntelliJ
-.idea/workspace.xml
-.idea/encodings.xml
-.idea/modules.xml
-.idea/vcs.xml
-.idea/misc.xml
-.idea/*.iml
+**/.idea/
 *.iml
 
