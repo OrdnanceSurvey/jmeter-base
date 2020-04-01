@@ -6,12 +6,12 @@
 # It forms the basis for other images.
 #
 
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 MAINTAINER Nathan.Meys@os.uk
 
 # Describe the environment
 #ENV JDK_VERSION 1.7.0
-ENV JMETER_VERSION 4.0
+ENV JMETER_VERSION 5.2.1
 
 RUN apt-get update -y && apt-get install -y sudo
 RUN sudo apt-get upgrade -y
@@ -19,7 +19,7 @@ RUN apt-get install curl -y
 RUN apt-get install unzip -y
 
 # Install the JDK
-RUN  apt-get install openjdk-8-jdk -y
+RUN  apt-get install openjdk-11-jdk -y
 
 # Install JMeter 4.0 and the Custom Thread Groups plugin
 RUN cd /var/lib && \
@@ -28,6 +28,6 @@ RUN cd /var/lib && \
   rm -f jmeter-${JMETER_VERSION}.tgz && \
   ln -s /var/lib/apache-jmeter-${JMETER_VERSION} /var/lib/apache-jmeter && \
   cd ./apache-jmeter-${JMETER_VERSION} && \
-  curl https://jmeter-plugins.org/files/packages/jpgc-casutg-2.5.zip -o ctg-plugin.zip && \
+  curl https://jmeter-plugins.org/files/packages/jpgc-casutg-2.9.zip -o ctg-plugin.zip && \
   unzip ctg-plugin.zip && \
   rm -f ctg-plugin.zip
